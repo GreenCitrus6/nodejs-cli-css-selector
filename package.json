@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/GreenCitrus6/nodejs-cli-css-selector/issues"
   },
-  "homepage": "https://github.com/GreenCitrus6/nodejs-cli-css-selector#readme"
+  "homepage": "https://github.com/GreenCitrus6/nodejs-cli-css-selector#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "jquery": "^3.7.1"
+  }
 }
