@@ -2,6 +2,7 @@
   "name": "nodejs-cli-css-selector",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "bin/app.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/GreenCitrus6/nodejs-cli-css-selector#readme",
   "dependencies": {
+    "axios": "^1.6.7",
     "cheerio": "^1.0.0-rc.12",
     "jquery": "^3.7.1",
     "yargs": "13.2"

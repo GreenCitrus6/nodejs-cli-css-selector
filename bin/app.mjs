@@ -1,12 +1,8 @@
 #!/usr/bin/env node
 import yargs from 'yargs';
+import axios, * as others from 'axios';
 import * as jquery from 'jquery';
 import * as cheerio from 'cheerio';
-
-// const options = yargs 
-//     .usage("Usage: -n <name>")
-//     .option("n", { alias: "name", describe: "Your name", type: "string", demandOption: true})
-//     .argv;
 
 const options = yargs 
     .usage("Usage: -u <url> -s <selector>")
@@ -14,11 +10,10 @@ const options = yargs
     .option("s", { alias: "selector", describe: "CSS Selector", type: "string", demandOption: true })
     .argv;
 
-const greeting = `Hello, ${options.url} ${options.selector}`;
+const response = await axios.get(options.url);
+const html = response.data;
+const $ = cheerio.load(html);
 
-console.log(greeting);
+const selectedHtml = $(`${options.selector}`).html();
 
-// async function selectHtml(url, cssSelector) {
-//     const $ = await cheerio.fromURL(url);
-//     console.log($);
-// }
+console.log(selectedHtml);
